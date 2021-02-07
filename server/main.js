@@ -38,9 +38,9 @@ const addNewItem = ({ item }) => {
   return { id, ...item };
 };
 
-const deleteItem = ({ id }) => {
-  dataToFrontEnd = dataToFrontEnd.filter((item) => item.id !== id);
-  return dataToFrontEnd;
+const deleteItem = ({ name }) => {
+  dataToFrontEnd = dataToFrontEnd.filter((item) => item.name !== name);
+  return { success: true };
 };
 
 const resolvers = {
@@ -49,7 +49,7 @@ const resolvers = {
   },
   Mutation: {
     addNewItem: (_, { item }) => addNewItem({ item }),
-    deleteDessert: (_, { id }) => deleteItem({ id }),
+    deleteItem: (_, { name }) => deleteItem({ name }),
     reset: () => resetData(),
   },
 };
@@ -78,7 +78,7 @@ const typeDefs = gql`
   }
   type Mutation {
     addNewItem(item: AddItemReqObj): NutritionData
-    deleteDessert(id: String): NutritionData
+    deleteItem(name: String): ResetResponse
     reset: ResetResponse
   }
 `;

@@ -6,3 +6,8 @@ export interface NutritionDataI {
   carbs: number;
   protein: number;
 }
+
+export interface TableI {
+  selectedRows: Array<string>;
+  numberOfRowsSelected: number;
+}

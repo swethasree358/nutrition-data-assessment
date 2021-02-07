@@ -8,7 +8,7 @@ import { resetNutritionData } from "../../state/nutritionData/actions";
 import { useLazyQuery } from "@apollo/client";
 import { GET_ALL_NUTRITION_VALUES } from "../../state/nutritionData/queries";
 
-function Header(props: any) {
+function Header() {
   const [getAllData, allDataObj] = useLazyQuery(GET_ALL_NUTRITION_VALUES);
   const dispatch = useDispatch();
   const [resetData] = useMutation(RESET_DATA);

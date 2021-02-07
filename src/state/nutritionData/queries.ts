@@ -13,6 +13,15 @@ export const GET_ALL_NUTRITION_VALUES = gql`
   }
 `;
 
+export const RESET_DATA = gql`
+  mutation {
+    reset {
+      success
+    }
+  }
+`;
+
+
 export const ADD_NEW_NUTRITION_ITEM = gql`
   mutation addNewItem(
     $name: String
@@ -40,9 +49,13 @@ export const ADD_NEW_NUTRITION_ITEM = gql`
   }
 `;
 
-export const RESET_DATA = gql`
-  mutation {
-    reset {
+export const DELETE_DATA = gql`
+  mutation deleteItem(
+    $name: String
+  ) {
+    deleteItem(
+      name: $name
+    ) {
       success
     }
   }
