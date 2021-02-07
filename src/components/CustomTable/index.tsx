@@ -62,7 +62,7 @@ function CustomTable() {
       </thead>
       <tbody className="lh-copy">
         {nutritionData.map((rowItem, index) => (
-          <tr key={index} className="bb b--moon-gray">
+          <tr key={index} className="bb b--light-gray">
             {Object.keys(rowItem)
               .filter((key) => !keysToIngore.includes(key))
               .map((key) => (

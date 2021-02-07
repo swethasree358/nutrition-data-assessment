@@ -5,7 +5,7 @@ import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { ADD_NEW_NUTRITION_ITEM } from "../../state/nutritionData/queries";
 import { useMutation } from "@apollo/client";
 import { useDispatch } from "react-redux";
-import { setNutritionData } from "../../state/nutritionData/actions";
+import { addNewNutritionItem } from "../../state/nutritionData/actions";
 
 function Toolbox() {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ function Toolbox() {
     });
 
     if (data && data.addNewItem) {
-      dispatch(setNutritionData([data.addNewItem]));
+      dispatch(addNewNutritionItem(data.addNewItem));
       setShouldOpenAddNewFrom(false);
     }
   }

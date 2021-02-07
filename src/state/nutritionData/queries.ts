@@ -39,3 +39,11 @@ export const ADD_NEW_NUTRITION_ITEM = gql`
     }
   }
 `;
+
+export const RESET_DATA = gql`
+  mutation {
+    reset {
+      success
+    }
+  }
+`;
