@@ -35,7 +35,7 @@ const addNewItem = ({ item }) => {
     ) + 1
   ).toString();
   dataToFrontEnd.push({ id, ...item });
-  return dataToFrontEnd;
+  return { id, ...item };
 };
 
 const deleteItem = ({ id }) => {
@@ -45,7 +45,7 @@ const deleteItem = ({ id }) => {
 
 const resolvers = {
   Query: {
-    getAllNutritionData: () => getAllNutritionData(),
+    nutritionData: () => getAllNutritionData(),
   },
   Mutation: {
     addNewItem: (_, { item }) => addNewItem({ item }),
@@ -64,7 +64,7 @@ const typeDefs = gql`
     protein: Int
   }
   type Query {
-    getAllNutritionData: [NutritionData]
+    nutritionData: [NutritionData]
   }
   type ResetResponse {
     success: Boolean
