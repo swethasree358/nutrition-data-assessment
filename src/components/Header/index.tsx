@@ -26,7 +26,7 @@ function Header() {
     }
   }
   return (
-    <div className="heading flex justify-between">
+    <div className="heading flex justify-between" data-testid="header">
       <div className="f2 avenir">Nutrition List</div>
       <CustomButton
         label="RESET DATA"

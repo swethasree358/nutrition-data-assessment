@@ -3,7 +3,7 @@ import Home from "../../containers/Home";
 
 function App() {
   return (
-    <div>
+    <div data-testid="app-component">
       <Home />
     </div>
   );

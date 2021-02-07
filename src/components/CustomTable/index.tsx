@@ -6,7 +6,10 @@ import { NutritionDataI } from "../../types";
 import { GET_ALL_NUTRITION_VALUES } from "../../state/nutritionData/queries";
 import { setNutritionData } from "../../state/nutritionData/actions";
 import CustomCheckbox from "../CustomCheckbox";
-import { setNumberOfRowsSelected, setSelectedRows } from "../../state/table/actions";
+import {
+  setNumberOfRowsSelected,
+  setSelectedRows,
+} from "../../state/table/actions";
 
 const keysToIngore = ["__typename", "id"];
 
@@ -81,7 +84,7 @@ function CustomTable() {
   }
 
   return (
-    <table className="f6 w-100 mw8 center collapse">
+    <table className="f6 w-100 mw8 center collapse" data-testid="table">
       <thead>
         <tr className="bg-white">
           <th className="pa3">
@@ -103,7 +106,7 @@ function CustomTable() {
       </thead>
       <tbody className="lh-copy">
         {nutritionData.map((rowItem, index) => (
-          <tr key={index} className="bb b--light-gray">
+          <tr key={index} className="bb b--light-gray" data-testid="table-row">
             <td className="pa3 tc">
               <CustomCheckbox
                 name={rowItem.name}

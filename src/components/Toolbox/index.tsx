@@ -14,6 +14,10 @@ import {
   resetNutritionData,
 } from "../../state/nutritionData/actions";
 import { StateI } from "../../state/initialState";
+import {
+  setNumberOfRowsSelected,
+  setSelectedRows,
+} from "../../state/table/actions";
 
 function Toolbox() {
   const dispatch = useDispatch();
@@ -46,6 +50,8 @@ function Toolbox() {
         getAllData();
       }
     });
+    dispatch(setNumberOfRowsSelected(0));
+    dispatch(setSelectedRows([]));
   }
 
   async function handleSubmit(values: any) {
@@ -67,7 +73,10 @@ function Toolbox() {
   return (
     <>
       {shouldOpenAddNewForm && <CustomDialogBox handleSubmit={handleSubmit} />}
-      <div className="toolbar bg-washed-red mt3 pa3 flex justify-between items-center">
+      <div
+        className="toolbar bg-washed-red mt3 pa3 flex justify-between items-center"
+        data-testid="toolbox"
+      >
         <div>
           <span>{numberOfRowsSelected} Selected</span>
         </div>
