@@ -13,12 +13,14 @@ function Header() {
   const dispatch = useDispatch();
   const [resetData] = useMutation(RESET_DATA);
 
+  // ResetNutritionData
   useEffect(() => {
     if (allDataObj.data && allDataObj.data.nutritionData) {
       dispatch(resetNutritionData(allDataObj.data.nutritionData));
     }
   }, [allDataObj, dispatch]);
 
+  // Handles Reset button click
   async function handleReset(e: any) {
     const { data } = await resetData();
     if (data && data.reset && data.reset.success) {

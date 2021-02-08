@@ -35,10 +35,12 @@ function Toolbox() {
     }
   }, [allDataObj, dispatch]);
 
+  // Handles AddNew button
   function handleAddNew() {
     setShouldOpenAddNewFrom(true);
   }
 
+  // Handles Delete button
   function handleDelete() {
     selectedRows.forEach(async (name) => {
       const { data } = await deleteItem({
@@ -54,6 +56,7 @@ function Toolbox() {
     dispatch(setSelectedRows([]));
   }
 
+  // Submits add new form and calls backend API
   async function handleSubmit(values: any) {
     const { data } = await addNewItem({
       variables: {

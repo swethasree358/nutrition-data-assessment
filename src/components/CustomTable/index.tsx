@@ -41,6 +41,7 @@ function CustomTable() {
   const { nutritionData } = useSelector((state: StateI) => state);
   const [selected, setSelected] = React.useState<string[]>([]);
 
+  // API call to get all Nutrition Data
   const { error, data } = useQuery<{ nutritionData: Array<NutritionDataI> }>(
     GET_ALL_NUTRITION_VALUES
   );
@@ -60,6 +61,7 @@ function CustomTable() {
     dispatch(setSelectedRows(selected));
   }, [selected, dispatch]);
 
+  // handles select all checbox change
   function handleSelectAllChange(e: any) {
     if (e.target.checked) {
       const newSelecteds = nutritionData.map((n) => n.name);
@@ -69,6 +71,7 @@ function CustomTable() {
     setSelected([]);
   }
 
+  // handles checkboxes in the rows
   function handleRowCheckboxChange(e: any) {
     const { name } = e.target;
     const selectedIndex = selected.indexOf(name);
