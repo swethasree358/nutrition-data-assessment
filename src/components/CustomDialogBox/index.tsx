@@ -32,7 +32,9 @@ interface DialogBoxProps {
   handleSubmit: (formValues: any) => void;
 }
 
-function DialogBox(props: DialogBoxProps) {
+
+// Custom Dialog Box Component
+function CustomDialogBox(props: DialogBoxProps) {
   const { handleSubmit } = props;
   const [formValues, setFormValues] = useState<any>({
     name: "",
@@ -82,4 +84,4 @@ function DialogBox(props: DialogBoxProps) {
   );
 }
 
-export default DialogBox;
+export default CustomDialogBox;

@@ -10,6 +10,7 @@ interface IButton {
   disabled?: boolean;
 }
 
+// Custom Button Component
 function CustomButton(props: IButton) {
   const { label, onClick, icon, classes, disabled = false } = props;
   return (

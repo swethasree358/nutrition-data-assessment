@@ -6,6 +6,7 @@ interface CustomCheckboxProps {
   checked: boolean;
 }
 
+// Custom Checkbox Component 
 function CustomCheckbox(props: CustomCheckboxProps) {
   const { name, onChange, checked } = props;
   return (

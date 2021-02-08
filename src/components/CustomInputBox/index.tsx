@@ -7,6 +7,7 @@ interface IInputBox {
   value: string;
 }
 
+// Custom Input Box
 function CustomInputBox(props: IInputBox) {
   const { label, name, onChange, value } = props;
   return (

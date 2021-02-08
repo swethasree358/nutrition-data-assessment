@@ -36,6 +36,7 @@ const headerCells = [
   },
 ];
 
+// Custom Table Component 
 function CustomTable() {
   const dispatch = useDispatch();
   const { nutritionData } = useSelector((state: StateI) => state);
