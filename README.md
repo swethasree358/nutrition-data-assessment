@@ -1,3 +1,14 @@
+# ####################################################################################################
+### Scope: 
+### This project displays list of Nutritions Data in tabular form and one can add, delete and reset the data.
+
+### Functionalities:
+### Add new record, delete the records, reset the records to list in default form.
+
+### Possible Enhancements:
+### Search functionalities, sorting, Delete All, Edit functionalities are possible Enhancements
+
+
 ### Clone the git repo
 
 ### `npm install`
