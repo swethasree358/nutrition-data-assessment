@@ -2,7 +2,7 @@ const { ApolloServer, gql } = require("apollo-server");
 
 const nutritionData = [
   {
-    id: "1",
+    nutritionId: "1",
     name: "Cake",
     calories: 340,
     fat: 34,
@@ -10,7 +10,7 @@ const nutritionData = [
     protein: 84,
   },
   {
-    id: "2",
+    nutritionId: "2",
     name: "Donut",
     calories: 98,
     fat: 458,
@@ -29,13 +29,13 @@ const resetData = () => {
 };
 
 const addNewItem = ({ item }) => {
-  const id = (
+  const nutritionId = (
     parseInt(
       dataToFrontEnd.map((ele) => ele.id).sort()[dataToFrontEnd.length - 1]
     ) + 1
   ).toString();
-  dataToFrontEnd.push({ id, ...item });
-  return { id, ...item };
+  dataToFrontEnd.push({ nutritionId, ...item });
+  return { nutritionId, ...item };
 };
 
 const deleteItem = ({ name }) => {
@@ -56,7 +56,7 @@ const resolvers = {
 
 const typeDefs = gql`
   type NutritionData {
-    id: String
+    nutritionId: String
     name: String
     calories: Int
     fat: Int

@@ -11,7 +11,7 @@ import {
   setSelectedRows,
 } from "../../state/table/actions";
 
-const keysToIngore = ["__typename", "id"];
+const keysToIngore = ["__typename", "nutritionId"];
 
 const headerCells = [
   {

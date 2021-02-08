@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 export const GET_ALL_NUTRITION_VALUES = gql`
   query NutritionDataI {
     nutritionData {
-      id
+      nutritionId
       name
       calories
       fat
@@ -39,7 +39,7 @@ export const ADD_NEW_NUTRITION_ITEM = gql`
         protein: $protein
       }
     ) {
-      id
+      nutritionId
       name
       calories
       fat

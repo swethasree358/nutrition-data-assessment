@@ -1,5 +1,5 @@
 export interface NutritionDataI {
-  id: string;
+  nutritionId: string;
   name: string;
   calories: number;
   fat: number;

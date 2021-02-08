@@ -13,7 +13,6 @@ function CustomCheckbox(props: CustomCheckboxProps) {
       <input
         className="mr2"
         type="checkbox"
-        id={name}
         name={name}
         onChange={onChange}
         checked={checked}
